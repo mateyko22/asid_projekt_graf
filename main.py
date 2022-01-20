@@ -94,9 +94,7 @@ class Graph:
             for nb in self.adjacencies[v]:
                 x = nb.destination
                 if x not in visited:
-                    result = dfs(nb.destination, visited, visit)
-                    if result is not None:
-                        return result
+                    dfs(nb.destination, visited, visit)
 
         dfs(vb, vis, visit)
 
@@ -209,8 +207,9 @@ v2 = g1.create_vertex('v2')
 v3 = g1.create_vertex('v3')
 v4 = g1.create_vertex('v4')
 v5 = g1.create_vertex('v5')
-g1.add(2, v0, v1, 90)
 g1.add(2, v0, v5, 7)
+g1.add(2, v0, v1, 90)
+
 g1.add(2, v2, v1, 1)
 g1.add(2, v2, v3, 1)
 g1.add(2, v3, v4, 10)
